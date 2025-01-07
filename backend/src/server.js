@@ -3,6 +3,10 @@ import cors from 'cors'
 import pino from 'pino-http';
 import { getEnvVar } from './utils/get-env-var.js';
 import customerRouter from './routers/customers.js'
+import dashboardRouter from './routers/dashboard.js';
+import ordersRouter from './routers/orders.js';
+import productsRouter from './routers/products.js';
+import suppliersRouter from './routers/suppliers.js';
 import { errorHandler } from './middlewares/error-handler.js';
 import { notFoundHandler } from './middlewares/not-found-handler.js';
 
@@ -24,20 +28,11 @@ export const startServer = () => {
     }),
   );
 
-// Middleware для логування часу запиту
-  app.use((req, res, next) => {
-    console.log(`Time: ${new Date().toLocaleString()}`);
-    next();
-  });
-
-// Маршрут для обробки GET-запитів на '/'
-  app.get('/', (req, res) => {
-    res.json({
-      message: 'Hello, World!',
-    });
-  });
-
   app.use(customerRouter);
+  app.use(dashboardRouter);
+  app.use(ordersRouter);
+  app.use(productsRouter);
+  app.use(suppliersRouter);
 
 // Middleware для обробких помилок не визначеного маршруту
   app.use('*', notFoundHandler);

@@ -37,4 +37,4 @@ const customersSchema = new Schema(
   },
 );
 
-export const CustomersCollection = model('customers', customersSchema);
+export const CustomersCollection = model('customers', customersSchema, "customers");

@@ -7,7 +7,6 @@ import { ctrlWrapper } from '../utils/ctrl-wrapper.js';
 
 const router = Router();
 
-
 router.get('/api/customers', ctrlWrapper(getCustomersController));
 
 router.get('/api/customers/:customerId', ctrlWrapper(getCustomersByIdController));
