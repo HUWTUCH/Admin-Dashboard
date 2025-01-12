@@ -20,7 +20,7 @@ const suppliersSchema = new Schema(
       required: true, // Дата транзакції
     },
     amount: {
-      type: Number,
+      type: String,
       required: true, // Сума транзакції
     },
     status: {
