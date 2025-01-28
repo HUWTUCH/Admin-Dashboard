@@ -1,8 +1,19 @@
 import { createProducts, deleteProducts, getAllProducts, updateProducts } from '../services/products.js';
 import createHttpError from 'http-errors';
+import { parsePaginationParams } from '../utils/parse-pagination-params.js';
+import { parseSortParams } from '../utils/parse-sort-params.js';
 
 export const getProductsController = async (req, res, next) => {
-  const products = await getAllProducts();
+  const {page, perPage} = parsePaginationParams(req.query);
+
+  const {sortBy, sortOrder} = parseSortParams(req.query, 'products');
+
+  const products = await getAllProducts({
+    sortBy,
+    sortOrder,
+    page,
+    perPage
+  });
 
   res.status(200).json({
     data: products,

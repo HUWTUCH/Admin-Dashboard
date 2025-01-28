@@ -1,12 +1,27 @@
 import { ProductsCollection } from '../db/models/products.js';
+import { calculatePaginationData } from '../utils/calculate-pagination-data.js';
 
 /**
  * Отримує всі продукти з бази даних.
  * @returns {Promise<Array>} Масив усіх продуктів, що зберігаються у базі даних.
  */
-export const getAllProducts = async () => {
-  const products = await ProductsCollection.find();
-  return products;
+export const getAllProducts = async ({page, perPage, sortBy, sortOrder}) => {
+  const limit = perPage;
+  const skip = (page - 1) * perPage;
+  const productsQuery = ProductsCollection.find();
+
+  const productsCount = await ProductsCollection.find()
+    .merge(productsQuery)
+    .countDocuments();
+
+  const products = await productsQuery.skip(skip).limit(limit).sort({[sortBy]: sortOrder}).exec();
+
+  const paginationData = calculatePaginationData(productsCount, perPage, page);
+
+  return {
+    data: products, // Масив клієнтів
+    ...paginationData, // Додаткові дані пагінації
+  };
 };
 
 /**

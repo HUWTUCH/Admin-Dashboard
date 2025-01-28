@@ -4,10 +4,10 @@ import { getAllSuppliers } from '../services/suppliers.js';
 import { getAllCustomers } from '../services/customers.js';
 
 export const getDashboardController = async (req, res, next) => {
-  const customers = await getAllCustomers();
-  const products = await getAllProducts();
-  const incomeExpenses = await getAllIncomeExpenses();
-  const suppliers = await getAllSuppliers();
+  const customers = await getAllCustomers({page: 1, perPage: 11});
+  const products = await getAllProducts({page: 1, perPage: 10});
+  const incomeExpenses = await getAllIncomeExpenses({page: 1, perPage: 4});
+  const suppliers = await getAllSuppliers({page: 1, perPage: 2});
 
   res.status(200).json({
     data: {

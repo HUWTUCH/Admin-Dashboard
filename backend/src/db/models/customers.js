@@ -15,7 +15,7 @@ const customersSchema = new Schema(
       required: true,
     },
     spent: {
-      type: Number,
+      type: String,
       required: true,
     },
     phone: {

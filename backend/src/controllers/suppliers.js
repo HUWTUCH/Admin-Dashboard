@@ -1,8 +1,15 @@
 import { createSuppliers, getAllSuppliers, updateSuppliers } from '../services/suppliers.js';
 import createHttpError from 'http-errors';
+import { parsePaginationParams } from '../utils/parse-pagination-params.js';
+import { parseSortParams } from '../utils/parse-sort-params.js';
 
 export const getSuppliersController = async (req, res, next) => {
-  const suppliers = await getAllSuppliers();
+  const {page, perPage} = parsePaginationParams(req.query);
+
+  const suppliers = await getAllSuppliers({
+    page,
+    perPage,
+  });
 
   res.status(200).json({
     data: suppliers,

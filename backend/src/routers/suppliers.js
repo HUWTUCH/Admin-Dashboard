@@ -5,6 +5,7 @@ import {
   getSuppliersController,
   upsertSuppliersController,
 } from '../controllers/suppliers.js';
+import { isValidId } from '../middlewares/isValidId.js';
 
 const router = Router();
 
@@ -12,6 +13,6 @@ router.get("/api/suppliers", ctrlWrapper(getSuppliersController));
 
 router.post("/api/suppliers", ctrlWrapper(createSuppliersController));
 
-router.put("/api/suppliers/:supplierId", ctrlWrapper(upsertSuppliersController));
+router.put("/api/suppliers/:supplierId", isValidId('supplierId'), ctrlWrapper(upsertSuppliersController));
 
 export default router;
