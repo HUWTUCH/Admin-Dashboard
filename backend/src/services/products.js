@@ -5,10 +5,29 @@ import { calculatePaginationData } from '../utils/calculate-pagination-data.js';
  * Отримує всі продукти з бази даних.
  * @returns {Promise<Array>} Масив усіх продуктів, що зберігаються у базі даних.
  */
-export const getAllProducts = async ({page, perPage, sortBy, sortOrder}) => {
+export const getAllProducts = async ({page, perPage, sortBy, sortOrder, filter = {}}) => {
   const limit = perPage;
   const skip = (page - 1) * perPage;
   const productsQuery = ProductsCollection.find();
+
+  if (filter.category) {
+    productsQuery.where('category').equals(filter.category);
+  }
+  if (filter.suppliers) {
+    productsQuery.where('suppliers').equals(filter.suppliers);
+  }
+  if (filter.maxPrice) {
+    productsQuery.where('price').lte(filter.maxPrice);
+  }
+  if (filter.minPrice) {
+    productsQuery.where('price').gte(filter.minPrice);
+  }
+  if (filter.maxStock) {
+    productsQuery.where('stock').lte(filter.maxStock);
+  }
+  if (filter.minStock) {
+    productsQuery.where('stock').gte(filter.minStock);
+  }
 
   const productsCount = await ProductsCollection.find()
     .merge(productsQuery)
