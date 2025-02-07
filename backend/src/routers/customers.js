@@ -5,8 +5,11 @@ import {
 } from '../controllers/customers.js';
 import { ctrlWrapper } from '../utils/ctrl-wrapper.js';
 import { isValidId } from '../middlewares/isValidId.js';
+import { authenticate } from '../middlewares/authenticate.js';
 
 const router = Router();
+
+router.use(authenticate);
 
 router.get('/api/customers/', ctrlWrapper(getCustomersController));
 

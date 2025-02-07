@@ -1,12 +1,14 @@
 import express from 'express';
 import cors from 'cors'
 import pino from 'pino-http';
+import cookieParser from 'cookie-parser';
 import { getEnvVar } from './utils/get-env-var.js';
 import customerRouter from './routers/customers.js'
 import dashboardRouter from './routers/dashboard.js';
 import ordersRouter from './routers/orders.js';
 import productsRouter from './routers/products.js';
 import suppliersRouter from './routers/suppliers.js';
+import registerRouters from './routers/auth.js';
 import { errorHandler } from './middlewares/error-handler.js';
 import { notFoundHandler } from './middlewares/not-found-handler.js';
 
@@ -19,6 +21,7 @@ export const startServer = () => {
   // наприклад, у запитах POST або PATCH
   app.use(express.json());
   app.use(cors());
+  app.use(cookieParser());
 
   app.use(
     pino({
@@ -28,6 +31,7 @@ export const startServer = () => {
     }),
   );
 
+  app.use(registerRouters);
   app.use(customerRouter);
   app.use(dashboardRouter);
   app.use(ordersRouter);
