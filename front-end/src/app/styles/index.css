@@ -40,6 +40,7 @@ body {
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+    background-color: #F7F8FA;
 }
 
 /* Видаляємо стандартну стилізацію для всіх ul та il, у яких є атрибут class*/
