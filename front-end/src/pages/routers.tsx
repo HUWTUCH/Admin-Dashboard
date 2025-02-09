@@ -12,8 +12,9 @@ export const Routing = () => {
   return (
     <div>
       <Routes>
+        {/*<Route path="/" element={<Navigate to="/register" replace />} />*/}
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Registration />} />
+        <Route index path="/register" element={<Registration />} />
         <Route path="/" element={<SharedLayout />}>
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="customers" element={<AllCustomers />} />
