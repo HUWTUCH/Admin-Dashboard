@@ -12,14 +12,6 @@ export const SharedLayoutComponent = styled.div`
         background-color: red;
     }
 `;
-export const Header = styled.div`
-    display: flex;
-    width: 100%;
-    height: 80px;
-    align-items: center;
-    flex-direction: row;
-    border-bottom: 1px solid #DCDDDF;
-`;
 export const Overlay = styled.div<openSidebar>`
     display: ${({ open }) => (open ? 'block' : 'none')};
     position: fixed; /* Фіксуємо фон поверх інших елементів */
