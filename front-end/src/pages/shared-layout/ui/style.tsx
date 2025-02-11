@@ -5,11 +5,11 @@ export const SharedLayoutComponent = styled.div`
     width: 100%;
     
     @media (min-width: 768px) {
-        background-color: rebeccapurple;
+        
     }
     
     @media (min-width: 1440px) {
-        background-color: red;
+    
     }
 `;
 export const Overlay = styled.div<openSidebar>`
@@ -21,4 +21,8 @@ export const Overlay = styled.div<openSidebar>`
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Затемнений фон */
     z-index: 999; /* Для того, щоб фон був під сайдбаром */
+
+    @media (min-width: 1440px) {
+        display: none;
+    }
 `;

@@ -29,6 +29,7 @@ export const SidebarMenu = styled.div<openSidebar>`
         display: flex;
         position: relative;
         width: 80px;
+        padding-top: 40px;
         
         .close-btn {
             display: none;
@@ -49,5 +50,9 @@ export const NavigationMenu = styled.div`
       justify-content: center;
       background-color: rgba(255, 255, 255, 1);
       box-shadow: 0 -1px 7px 0 rgba(71, 71, 71, 0.05);
+      img{
+          width: 12px;
+          height: 13px;
+      }
   };
 `;
