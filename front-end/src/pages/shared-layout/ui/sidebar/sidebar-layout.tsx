@@ -1,7 +1,12 @@
 import { NavigationMenu, SidebarMenu } from './style.tsx';
 import * as React from 'react';
 import { SidebarProps } from './types.ts';
-import CloseIcon from '../../../../shared/assets/icons/SVG/close.svg';
+import CloseIcon from './../../../../shared/assets/icons/SVG/close.svg';
+import dashboard from './../../../../shared/assets/icons/SVG/dashboard_not_active.svg';
+import basket from './../../../../shared/assets/icons/SVG/bascket_not_active.svg';
+import flask from './../../../../shared/assets/icons/SVG/flask_not_active.svg';
+import customers from './../../../../shared/assets/icons/SVG/customers_not_active.svg';
+import suppliers from './../../../../shared/assets/icons/SVG/suppliers_not_active.svg';
 
 export const Sidebar: React.FC<SidebarProps> = ({close, open}) => {
   return (
@@ -10,11 +15,21 @@ export const Sidebar: React.FC<SidebarProps> = ({close, open}) => {
         <img  src={CloseIcon} width={32} height={32}/>
       </button>
       <NavigationMenu>
-        <button className='navigation-button'>1</button>
-        <button className='navigation-button'>2</button>
-        <button className='navigation-button'>3</button>
-        <button className='navigation-button'>4</button>
-        <button className='navigation-button'>5</button>
+        <button className='navigation-button'>
+          <img  src={dashboard} width={32} height={32}/>
+        </button>
+        <button className='navigation-button'>
+          <img  src={basket} width={32} height={32}/>
+        </button>
+        <button className='navigation-button'>
+          <img  src={flask} width={32} height={32}/>
+        </button>
+        <button className='navigation-button'>
+          <img  src={suppliers} width={32} height={32}/>
+        </button>
+        <button className='navigation-button'>
+          <img  src={customers} width={32} height={32}/>
+        </button>
       </NavigationMenu>
     </SidebarMenu>
   )
