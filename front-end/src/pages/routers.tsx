@@ -16,11 +16,11 @@ export const Routing = () => {
         <Route path="/login" element={<Login />} />
         <Route index path="/register" element={<Registration />} />
         <Route path="/" element={<SharedLayout />}>
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="customers" element={<AllCustomers />} />
-          <Route path="orders" element={<AllOrders />} />
-          <Route path="products" element={<AllProducts />} />
-          <Route path="suppliers" element={<AllSuppliers />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/customers" element={<AllCustomers />} />
+          <Route path="/orders" element={<AllOrders />} />
+          <Route path="/products" element={<AllProducts />} />
+          <Route path="/suppliers" element={<AllSuppliers />} />
         </Route>
         <Route path="*" element={<NotFount />} />
       </Routes>

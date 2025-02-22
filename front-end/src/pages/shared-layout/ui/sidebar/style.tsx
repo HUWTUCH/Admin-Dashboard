@@ -5,15 +5,18 @@ export const SidebarMenu = styled.div<openSidebar>`
     display: ${({ open }) => (open ? 'flex' : 'none')};
     position: absolute;
     flex-direction: column;
-    gap: 40px;
     padding-left: 20px;
     top: 0;
+    justify-content: space-between;
     width: 78px;
     height: 100vh;
     background-color: rgba(247, 248, 250, 1);
     border-right: 1px solid rgba(29, 30, 33, 0.1);
     z-index: 1000;
-
+    padding-bottom: 20px;
+    .logout-button {
+        display: flex;
+    };
     .close-btn {
         margin-left: 12px;
         margin-top: 20px;
@@ -31,6 +34,9 @@ export const SidebarMenu = styled.div<openSidebar>`
         width: 80px;
         padding-top: 40px;
         
+        .logout-button {
+            display: none;
+        };
         .close-btn {
             display: none;
         };
@@ -42,8 +48,8 @@ export const NavigationMenu = styled.div`
     flex-direction: column;
   .navigation-button {
       display: flex;
-      width: 38px;
-      height: 38px;
+      width: 44px;
+      height: 44px;
       border: none;
       border-radius: 100px;
       align-items: center;

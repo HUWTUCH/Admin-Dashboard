@@ -12,6 +12,16 @@ export const SharedLayoutComponent = styled.div`
     
     }
 `;
+export const Main = styled.div`
+    display: flex;
+    flex-direction: column;
+    
+    
+    @media (min-width: 1440px) {
+        display: flex;
+        flex-direction: row;
+    }
+`;
 export const Overlay = styled.div<openSidebar>`
     display: ${({ open }) => (open ? 'block' : 'none')};
     position: fixed; /* Фіксуємо фон поверх інших елементів */
@@ -24,5 +34,16 @@ export const Overlay = styled.div<openSidebar>`
 
     @media (min-width: 1440px) {
         display: none;
+    }
+`;
+export const OutletContainer = styled.div`
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    @media (min-width: 768px) {
+        margin-left: 32px;
+    }
+    @media (min-width: 1440px) {
+        margin-left: 40px;
     }
 `;
