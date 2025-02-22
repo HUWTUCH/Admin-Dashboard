@@ -12,7 +12,6 @@ export const HeaderComponent = styled.div`
     flex-direction: row;
     border-bottom: 1px solid #DCDDDF;
     
-    
     .main{
         display: flex;
         gap: 20px;
@@ -41,7 +40,7 @@ export const HeaderComponent = styled.div`
     };
     @media (min-width: 1440px) {
         .logout-button {
-            display: flex;
+            display: block;
         };
     }
 `;

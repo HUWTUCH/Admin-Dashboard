@@ -37,7 +37,9 @@ export const Overlay = styled.div<openSidebar>`
     }
 `;
 export const OutletContainer = styled.div`
-  margin-left: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
     @media (min-width: 768px) {
         margin-left: 32px;
     }
