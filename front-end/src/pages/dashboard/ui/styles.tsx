@@ -7,7 +7,7 @@ export const ContainerDashboard = styled.div`
       gap: 20px;
       flex-wrap: wrap;
   };
-    @media (min-width: 545px) and (max-width: 1440px) {
+    @media (min-width: 545px) {
         .blocks-general-indicators {
             display: flex;
             width: 525px;

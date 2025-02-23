@@ -16,6 +16,7 @@ export const Routing = () => {
         <Route path="/login" element={<Login />} />
         <Route index path="/register" element={<Registration />} />
         <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/customers" element={<AllCustomers />} />
           <Route path="/orders" element={<AllOrders />} />

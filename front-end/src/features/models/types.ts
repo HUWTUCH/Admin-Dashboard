@@ -1,5 +1,5 @@
 export interface TotalProductsProps {
   title: string;
-  quantity: number;
+  quantity: number | string;
   imgSrc: string;
 }
