@@ -1,2 +1,1 @@
-export {Registration} from "./ui/Registration";
-export {Login} from "./ui/Login";
+export {AuthPage} from './ui/auth';

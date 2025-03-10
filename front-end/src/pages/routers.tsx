@@ -1,20 +1,22 @@
 import { Route, Routes } from 'react-router-dom';
 import { SharedLayout } from './shared-layout';
-import { Login, Registration } from './sign-in';
 import { Dashboard } from './dashboard';
 import { AllCustomers } from './all-customers';
 import { AllOrders } from './all-orders';
 import { AllProducts } from './all-products';
 import { AllSuppliers } from './all-suppliers';
 import { NotFount } from './error';
+import { AuthPage } from './sign-in';
+import { LoginForm, RegistrationForm } from '../features';
 
 export const Routing = () => {
   return (
     <div>
       <Routes>
-        {/*<Route path="/" element={<Navigate to="/register" replace />} />*/}
-        <Route path="/login" element={<Login />} />
-        <Route index path="/register" element={<Registration />} />
+        <Route path="/" element={<AuthPage />}>
+          <Route index path="/registration" element={<RegistrationForm />} />
+          <Route path="/login" element={<LoginForm />} />
+        </Route>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />

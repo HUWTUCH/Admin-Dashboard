@@ -6,6 +6,7 @@ import { ContainerDashboard } from './styles.tsx';
 import { RecentCustomersList } from '../../../widgets/recent-customers';
 
 export const Dashboard = () => {
+
   return (
     <ContainerDashboard>
       <div className='blocks-general-indicators'>
@@ -13,7 +14,7 @@ export const Dashboard = () => {
         <TotalProducts title='All suppliers' imgSrc={suppliersIcon} quantity={211} />
         <TotalProducts title='All customers' imgSrc={customersIcon} quantity={140} />
       </div>
-      <RecentCustomersList/>
+      <RecentCustomersList />
     </ContainerDashboard>
   );
 };

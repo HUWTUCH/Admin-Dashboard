@@ -1,4 +1,4 @@
-import { RecentCustomersContainer, TableCustomersColumns } from './styles.tsx';
+import { RecentCustomersColumns, RecentCustomersContainer } from './styles.tsx';
 
 const customers = [
   { name: 'Dima', email: 'dima@gmail.com', spent: '2,585.30' },
@@ -12,7 +12,7 @@ export const RecentCustomersList = () => {
       <div className="container-header">
         <h3>Recent Customers</h3>
       </div>
-      <TableCustomersColumns>
+      <RecentCustomersColumns>
         <div className="table-header">
           <div className="columns"><h5>Name</h5></div>
           <div className="columns"><h5>Email</h5></div>
@@ -31,7 +31,7 @@ export const RecentCustomersList = () => {
             </div>
           </div>
         ))}
-      </TableCustomersColumns>
+      </RecentCustomersColumns>
     </RecentCustomersContainer>
   );
 };
