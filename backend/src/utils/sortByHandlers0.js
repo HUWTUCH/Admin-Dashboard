@@ -35,3 +35,22 @@ export const sortByProducts = (sortBy) => {
 
   return '_id';
 };
+
+export const sortByDashboard = (sortBy) => {
+  const keyOfDashboard = [
+    '_id',
+    'name',
+    'price',
+    'stock',
+    'category',
+    'suppliers',
+    'status',
+    'order_date',
+  ];
+
+  if (keyOfDashboard.includes(sortBy)) {
+    return sortBy;
+  }
+
+  return '_id';
+};

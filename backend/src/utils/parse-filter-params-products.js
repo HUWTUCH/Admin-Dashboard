@@ -13,6 +13,7 @@ const parseSuppliers = (suppliers) => {
   if (isSuppliers(suppliers)) return suppliers;
 }
 
+// TODO: Duplicated code  
 const parseNumber = (number) => {
   const isString = typeof number === 'string';
   if (!isString) return;
