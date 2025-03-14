@@ -4,7 +4,7 @@ import createHttpError from 'http-errors';
 import { randomBytes } from 'crypto';
 import { FIFTEEN_MINUTES, ONE_DAY } from '../constants/login-auth.js';
 import { SessionsCollection } from '../db/models/session.js';
-// Повиносити кожен метод в окремий файл
+
 export const registerUser = async (payload) => {
   const user = await UserCollection.findOne({ email: payload.email });
   if (user) throw createHttpError(409, 'Email in use');

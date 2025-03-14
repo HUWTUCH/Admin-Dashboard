@@ -1,4 +1,4 @@
-const parseStatus = (status,) => {
+const parseStatus = (status) => {
   const isString = typeof status === 'string';
   if (!isString) return;
   const isStatus = (status) => ["Processing", "Delivered", "Completed", "Pending", "Shipped", "Confirmed", "Cancelled"].includes(status);
