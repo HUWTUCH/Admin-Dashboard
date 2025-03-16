@@ -1,3 +1,4 @@
+// TODO: Перенести в entities/customer
 export interface Customer {
     id: string;
     name: string;

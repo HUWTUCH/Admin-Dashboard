@@ -15,6 +15,7 @@ export const SharedLayoutComponent = styled.div`
 export const Main = styled.div`
     display: flex;
     flex-direction: column;
+    width: 100%;
     
     
     @media (min-width: 1440px) {
@@ -40,6 +41,7 @@ export const OutletContainer = styled.div`
     margin-left: 20px;
     margin-top: 20px;
     margin-right: 20px;
+    width: 100%;
     @media (min-width: 768px) {
         margin-left: 32px;
     }

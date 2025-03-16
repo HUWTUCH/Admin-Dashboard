@@ -1,9 +1,17 @@
 import { getCustomers } from "../../../features/api/get-customers";
 import { Customer } from "../model/types";
 import { useFetchData } from "../../../shared/assets/hooks/useFetchData";
-import { DataTable } from "../../../widgets/recent-customers";
 import { FilterTable } from "../../../shared/assets/ui/table-filter";
 import { useState } from "react";
+import { Table } from "../../../shared/ui/table";
+
+const columns = [
+  { key: 'name', label: 'User Info' },
+  { key: 'email', label: 'Email' },
+  { key: 'address', label: 'Address' },
+  { key: 'phone', label: 'Phone' },
+  { key: 'register_date', label: 'Register Date' },
+];
 
 export const AllCustomers= () => {
   const [customersFilter, setCustomersFilter] = useState<Customer[]>([]);
@@ -26,7 +34,7 @@ export const AllCustomers= () => {
   return (
     <div>
         <FilterTable name="User Name" onFilter={handleFilter} />
-        <DataTable title="Customers Data" titleColumns={["User Info", "Email", "Address", "Phone", "Register Date"]} items={customersToShow} />
+        <Table headerTitle="Customers Data" columns={columns} data={customersToShow} />
     </div>
   );
 };

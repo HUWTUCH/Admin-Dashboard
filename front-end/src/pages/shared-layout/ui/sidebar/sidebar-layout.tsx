@@ -15,7 +15,7 @@ import suppliersActive from './../../../../shared/assets/icons/SVG/suppliers_act
 import { Logout } from '../../../../features';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-
+// TODO: Перенести в widgets/sidebar/ui/sidebar.tsx
 export const Sidebar: React.FC<SidebarProps> = ({ close, open }) => {
   const [active, setActive] = useState(localStorage.getItem('active') || '/dashboard');
 

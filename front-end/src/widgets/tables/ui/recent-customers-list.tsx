@@ -5,7 +5,7 @@ const customers = [
   { name: 'Alex', email: 'alex@gmail.com', spent: '3,100.50' },
   { name: 'Kate', email: 'kate@gmail.com', spent: '1,985.75' },
 ];
-
+// TODO: Перенести в pages/dashboard/ui/recent-customers-list/index.tsx
 export const RecentCustomersList = () => {
   return (
     <RecentCustomersContainer>

@@ -9,7 +9,7 @@ const initialValues: (initialValuesType) = {
   password: '',
 };
 
-
+// TODO: Перенести в features/login/ui/login-form.tsx
 export const LoginForm = () => {
   const navigate = useNavigate();
 

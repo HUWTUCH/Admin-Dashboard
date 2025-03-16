@@ -1,6 +1,6 @@
 import axios from "axios";
 import { initialValuesType } from "../models/types";
-
+// TODO: Перенести в features/login/api/login-api.ts
 export const loginApi = async (values: initialValuesType, actions: any) => {
     try {
         const response = await axios.post(
