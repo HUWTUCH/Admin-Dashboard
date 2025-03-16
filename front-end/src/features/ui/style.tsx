@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+// TODO: Перенести в features/logout/ui/logout-button.tsx
 export const LogoutButtonContainer = styled.button`
     display: flex;
     width: 44px;
@@ -10,6 +10,7 @@ export const LogoutButtonContainer = styled.button`
     justify-content: center;
     background-color: rgba(89, 177, 122, 1);
 `;
+// TODO: Перенести в pages/dashboard/ui/total-value-display/style.tsx
 export const ContainerTotalValue = styled.div`
     display: flex;
     flex-direction: column;

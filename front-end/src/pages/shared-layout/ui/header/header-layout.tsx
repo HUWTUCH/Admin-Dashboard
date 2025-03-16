@@ -5,7 +5,7 @@ import * as React from 'react';
 import { HeaderPageTitles, HeaderProps } from './types.ts';
 import { Logout } from '../../../../features';
 import { useLocation } from 'react-router-dom';
-
+// TODO: Перенести в widgets/header/ui/header.tsx
 export const Header: React.FC<HeaderProps> = ({openMenu}) => {
   const location = useLocation();
 

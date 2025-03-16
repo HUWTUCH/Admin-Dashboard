@@ -5,7 +5,7 @@ interface FilterProps {
     name: string;
     onFilter: (value: string) => void;
   }
-
+// TODO: Перенести в shared/ui/table/index.tsx
 export const FilterTable = ({name, onFilter}: FilterProps) => {
     const [filterValue, setFilterValue] = useState("");
 

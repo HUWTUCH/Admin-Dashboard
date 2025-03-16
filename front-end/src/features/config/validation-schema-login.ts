@@ -1,5 +1,5 @@
 import * as Yup from "yup";
-
+// TODO: Перенести в features/login/config/validation-schema-login.ts
 const loginSchema = Yup.object().shape({
   email: 
   Yup.string()

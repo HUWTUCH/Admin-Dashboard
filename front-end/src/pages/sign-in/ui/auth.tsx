@@ -3,7 +3,7 @@ import logo from '../../../shared/assets/images/logo.png';
 import footerElement from '../../../shared/assets/images/footer_login_element.png';
 import tablet from '../../../shared/assets/images/tablet.png';
 import { Link, Outlet } from 'react-router-dom';
-
+// TODO: Змінити назву сторінки на SignInPage
 export const AuthPage = () => {
   return (
     <AuthContainer>

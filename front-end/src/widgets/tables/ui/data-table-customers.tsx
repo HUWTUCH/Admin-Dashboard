@@ -1,27 +1,28 @@
-import { TableColumns, TableContainer } from "./styles";
+import { TableColumnsCustomers, TableContainerCustomers } from "./styles";
 
 interface DataTableProps {
     title: string;
     titleColumns: string[];
     items: any[];
 }
-
-export const DataTable = ({title, titleColumns, items}: DataTableProps) => {
+// TODO: Перенести в pages/all-customers/ui/data-table-customers/index.tsx
+export const DataTableCustomers = ({title, titleColumns, items}: DataTableProps) => {
 
     const normalizedItems = Array.isArray(items) ? items.slice(0, 5) : Object.values(items).slice(0, 5);
 
     return (
-        <TableContainer>
+        <TableContainerCustomers>
       <div className="container-header">
         <h3>{title}</h3>
       </div>
-      <TableColumns>
+      <TableColumnsCustomers>
         <div className="table-header">
-          <div className="columns"><h5>{titleColumns[0]}</h5></div>
-          <div className="columns"><h5>{titleColumns[1]}</h5></div>
-          <div className="columns"><h5>{titleColumns[2]}</h5></div>
-          <div className="columns"><h5>{titleColumns[3]}</h5></div>
-          <div className="columns"><h5>{titleColumns[4]}</h5></div>
+
+          {titleColumns.map((column: string, index: number) => (
+            <div className="columns" key={index}>
+              <h5>{column}</h5>
+            </div>
+          ))}
         </div>
         {normalizedItems.map((item: any, index: number) => (
            <div key={index} className="table-body">
@@ -45,7 +46,7 @@ export const DataTable = ({title, titleColumns, items}: DataTableProps) => {
            </div>
          </div>
         ))}
-      </TableColumns>
-    </TableContainer>
+      </TableColumnsCustomers>
+    </TableContainerCustomers>
   );
 };

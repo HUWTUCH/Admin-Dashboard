@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-
+// TODO: Перенести в shared/lib/hooks/useFetchData.ts
 export const useFetchData = <T>(fetchFunction: () => Promise<T>) => {
     const [data, setData] = useState<T | []>([]);
     const [loading, setLoading] = useState(false);

@@ -1,9 +1,10 @@
 import styled from "styled-components";
-
+// TODO: Перенести в shared/ui/table
 export const FilterContainer =  styled.div`
     display: flex;
     align-items: center;
     gap: 14px;
+
 
     .input-filter {
         width: 224px;

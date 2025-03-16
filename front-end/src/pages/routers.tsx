@@ -8,7 +8,7 @@ import { AllSuppliers } from './all-suppliers';
 import { NotFount } from './error';
 import { AuthPage } from './sign-in';
 import { LoginForm, RegistrationForm } from '../features';
-
+// TODO: Перенести в providers/routing/ui/routing.tsx
 export const Routing = () => {
   return (
     <div>
